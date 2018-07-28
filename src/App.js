@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import Tiles from "./components/Tiles";
 import Body from "./components/Body";
-import Header from "./components.Header";
-import logo from './logo.svg';
+import Header from "./components/Header";
+import dogs from "./dogs.json";
 import './App.css';
 
 class App extends Component {
   state = {
-      albums, 
+      dogs, 
       score: 0,
       highscore: 0
   };
 
 //counting scores
   clickCount = id => {
-    this.state.albums.find((h, i) => {
+    this.state.dogs.find((h, i) => {
       if (h.id === id) {
-          if (albums[i].count === 0) {
-              albums[i].count = albums[i].count + 1;
+          if (dogs[i].count === 0) {
+              dogs[i].count = dogs[i].count + 1;
               this.setState({ score: this.state.score + 1 }, function () {
                   console.log(this.state.score);
               });
-              this.state.albums.sort(() => Math.random() - 0.5)
+              this.state.dogs.sort(() => Math.random() - 0.5)
               return true;
           } else {
               this.endGame();
@@ -37,25 +37,25 @@ class App extends Component {
               console.log(this.state.highscore);
           });
       }
-      this.state.albums.forEach(albumArt => {
-          albumArt.count = 0;
+      this.state.dogs.forEach(dogPic => {
+          dogPic.count = 0;
       });
       alert(`Game...OVER! The Final Score:\n ${this.state.score}`);
       this.setState({ score: 0 });
       return true;
   }
 
-  //render albums
+  //render dogs
   render() {
       return (
           <Body>
-              <Header score={this.state.score} highscore={this.state.highscore}>Metallica Album Click Game</Header>
-              {this.state.albums.map(albumArt => (
-                  <AlbumTile
+              <Header score={this.state.score} highscore={this.state.highscore}>Dog Image Click Game</Header>
+              {this.state.dogs.map(dogPic => (
+                  <Tiles
                       clickCount={this.clickCount}
-                      id={albumArt.id}
-                      key={albumArt.id}
-                      image={require(`${albumArt.image}`)}
+                      id={dogPic.id}
+                      key={dogPic.id}
+                      image={require(`${dogPic.image}`)}
                   />
               ))}
           </Body>

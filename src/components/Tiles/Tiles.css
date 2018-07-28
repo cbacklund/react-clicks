@@ -1,0 +1,27 @@
+.Tile {
+    background: white;
+    border-radius: 2px;
+    height: 250px;
+    margin: 16px;
+    position: relative;
+    width: 325px;
+    box-shadow: 0 3px 6px lightgrey, 0 3px 6px lightgrey;
+    text-align: left;
+  }
+  
+  .Tile > .img-container {
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    background:dimgray;
+  }
+  .Tile > .img-container > img {
+    width: 75%;
+    padding-top: 5px;
+  }
+  
+  .Tile > .content {
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 16px;
+  }

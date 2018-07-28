@@ -1,0 +1,74 @@
+[
+    {
+      "id": 1,
+      "name": "Akita",
+      "image": "./components/images/akita.png",
+      "count": 0
+    },
+    {
+      "id": 2,
+      "name": "Alaskan Malamute",
+      "image": "./components/images/alaskan-malamute.png",
+      "count": 0
+    },
+    {
+      "id": 3,
+      "name": "Bernese Mountain Dog",
+      "image": "./components/images/bernese-mountain-dog.png",
+      "count": 0
+    },
+    {
+      "id": 4,
+      "name": "Black Russian Terrier",
+      "image": "./components/images/black-russian-terrier.png",
+      "count": 0
+    },
+    {
+      "id": 5,
+      "name": "Boxer",
+      "image": "./components/images/boxer.png",
+      "count": 0
+    },
+    {
+      "id": 6,
+      "name": "Doberman Pinscher",
+      "image": "./components/images/doberman-pinscher.png",
+      "count": 0
+    },
+    {
+      "id": 7,
+      "name": "Dogue de Bordeaux",
+      "image": "./components/images/dogue-de-bordeaux.png",
+      "count": 0
+    },
+    {
+      "id": 8,
+      "name": "Great Dane",
+      "image": "./components/images/great-dane.png",
+      "count": 0
+    },
+    {
+      "id": 9,
+      "name": "Greater Swiss Mountain Dog",
+      "image": "./components/images/greater-swiss-mountain-dog.png",
+      "count": 0
+    },
+    {
+      "id": 10,
+      "name": "Great Pyrenees",
+      "image": "./components/images/great-pyrenees.png",
+      "count": 0
+    },
+    {
+      "id": 11,
+      "name": "Leonberger",
+      "image": "./components/images/leonberger.png",
+      "count": 0
+    },
+    {
+      "id": 12,
+      "name": "Tibetan Mastiff",
+      "image": "./components/images/tibetan-mastiff.png",
+      "count": 0
+    }
+  ]

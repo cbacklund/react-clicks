@@ -1,21 +1,69 @@
 import React, { Component } from 'react';
+import Tiles from "./components/Tiles";
+import Body from "./components/Body";
+import Header from "./components.Header";
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+  state = {
+      albums, 
+      score: 0,
+      highscore: 0
+  };
+
+//counting scores
+  clickCount = id => {
+    this.state.albums.find((h, i) => {
+      if (h.id === id) {
+          if (albums[i].count === 0) {
+              albums[i].count = albums[i].count + 1;
+              this.setState({ score: this.state.score + 1 }, function () {
+                  console.log(this.state.score);
+              });
+              this.state.albums.sort(() => Math.random() - 0.5)
+              return true;
+          } else {
+              this.endGame();
+          }
+      }
+  });
   }
+
+    //endgame
+    endGame = () => {
+      if (this.state.score > this.state.highscore) {
+          this.setState({ highscore: this.state.score }, function () {
+              console.log(this.state.highscore);
+          });
+      }
+      this.state.albums.forEach(albumArt => {
+          albumArt.count = 0;
+      });
+      alert(`Game...OVER! The Final Score:\n ${this.state.score}`);
+      this.setState({ score: 0 });
+      return true;
+  }
+
+  //render albums
+  render() {
+      return (
+          <Body>
+              <Header score={this.state.score} highscore={this.state.highscore}>Metallica Album Click Game</Header>
+              {this.state.albums.map(albumArt => (
+                  <AlbumTile
+                      clickCount={this.clickCount}
+                      id={albumArt.id}
+                      key={albumArt.id}
+                      image={require(`${albumArt.image}`)}
+                  />
+              ))}
+          </Body>
+      );
+  }
+
+
 }
+
 
 export default App;

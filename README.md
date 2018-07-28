@@ -1,7 +1,7 @@
 ## React Image Click Game
 
 # Live Game hosted on Heroku
-  www.heroku.com 
+   https://boiling-depths-25012.herokuapp.com
 
 # Rules of the Game
 
